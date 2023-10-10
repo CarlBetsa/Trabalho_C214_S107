@@ -1,0 +1,44 @@
+{
+    "atendimentos_professores": [
+        {
+            "nomeDoProfessor": "Christopher",
+            "horarioDeAtendimento": "15:30",
+            "periodo": "integral",
+            "salaDeAtendimento": 22,
+            "predio": [
+                1,
+                2,
+                3,
+                4,
+                6
+            ]
+        },
+        {
+            "nomeDoProfessor": "Marcelinho",
+            "horarioDeAtendimento": "10:00",
+            "periodo": "Integral",
+            "salaDeAtendimento": 5,
+            "predio": [
+                1,
+                2,
+                3,
+                4,
+                6
+            ]
+        },
+        {
+            "nomeDoProfessor": "Renzo",
+            "horarioDeAtendimento": "19:30",
+            "periodo": "Noturno",
+            "salaDeAtendimento": 17,
+            "predio": [
+                1,
+                2,
+                3,
+                4,
+                6
+            ]
+        }
+  
+    ]
+  }

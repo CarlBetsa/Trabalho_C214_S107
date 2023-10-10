@@ -1,0 +1,62 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Trabalho_C214_S107
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Testes:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Instalar dependências
+      run: npm ci
+
+    - name: Testes Jest
+      run: npm test
+
+    - name: Upload relatorio
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-report
+        path: ./test-report.html
+
+  Empacotar:
+    needs: Testes
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: npm run build
+
+    - name: Upload de artefatos
+      uses: actions/upload-artifact@v3
+      with:
+        name: app_pack
+        path: app.js
+
+  Notificacao:
+
+    runs-on: ubuntu-latest
+
+    env:
+      EMAIL_LIST: carl.betsa@ges.inatel.br
+
+    steps:
+    - name: Envia E-mail
+      uses: actions/checkout@v3
+    - run: sh scripts/shell.sh

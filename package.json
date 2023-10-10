@@ -1,0 +1,26 @@
+{
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
+  "name": "trabalho_c214_s107",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "json-loader": "^0.5.7",
+    "webpack": "^5.88.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  }
+}
